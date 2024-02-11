@@ -1,5 +1,5 @@
 <?php
-include("db_config.php");
+include("api.php");
 
 ?>
 
@@ -32,12 +32,30 @@ include("db_config.php");
  
        <?php } ?>
         
-       
-       
         <div class="text-center">
             <a href="create.php" class="btn btn-outline-dark">Cria Novo Post</a>
 
         </div>
+
+
+        <div class="row">
+
+        <?php foreach($sql_listar as $item_post) { ?>
+                <div class="col-4 d-flex justify-content-center align-items-center">
+                    <div class="card text-white bg-dark mt-5">
+                        <div class="card-body" style="width:18rem;">
+
+                            <h4><?php echo $item_post['titulo_post'];?></h4>
+                            <p><?php echo $item_post['texto_post'];?></p>
+                        </div>
+
+                    </div>
+                    
+                </div>
+
+        <?php }?>
+
+       </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
