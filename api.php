@@ -14,7 +14,7 @@ if(isset($_POST["novo_post"])) {
 
    
     $sql_create = "INSERT INTO `post`(`titulo_post`, `texto_post`, `data_post`) 
-    VALUES ('titulo_post', '$texto_post', NOW())";
+    VALUES ('$titulo_post', '$texto_post', NOW())";
 
    
     $result_create = mysqli_query($con, $sql_create);
@@ -32,4 +32,26 @@ if(isset($_POST["novo_post"])) {
 
     
 }
+
+
+if(isset($_REQUEST["id"])) {
+    $id=$_REQUEST["id"];
+
+    $sql_view="SELECT * From `post` WHERE  `id_post` = $id ";
+    $result_view = mysqli_query($con, $sql_view );
+}
+
+
+if(isset($_POST["editar_post"])) {
+
+    $id_post=$_POST["id_post"];
+    $titulo_post = $_POST['titulo_post'];
+    $texto_post = $_POST['texto_post'];
+
+    $sql_editar="UPDATE `post` SET `titulo_post`= '$titulo_post', `texto_post` = '$texto_post', `data_post`= NOW() WHERE `id_post` = $id ";
+     $result_editar = mysqli_query($con, $sql_editar );
+
+    
+}
+
 ?>
