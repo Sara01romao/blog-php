@@ -47,6 +47,8 @@ include("api.php");
 
                             <h4><?php echo $item_post['titulo_post'];?></h4>
                             <p><?php echo $item_post['texto_post'];?></p>
+
+                            <a href="view.php?id=<?php echo $item_post['id_post']; ?>" class="btn btn-light">Saiba Mais</a>
                         </div>
 
                     </div>
