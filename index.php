@@ -28,6 +28,13 @@ include("api.php");
 
                 </div>
     
+            <?php } if($_REQUEST['info'] == "editok") { ?>
+                    
+                <div class="alert alert-success" role="alert">
+                    Post editado com sucesso
+
+                </div>
+                      
             <?php } ?>
  
        <?php } ?>
