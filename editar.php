@@ -1,5 +1,10 @@
 <?php
+
 include("api.php");
+
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +24,7 @@ include("api.php");
        
         <?php foreach($result_view  as $view) { ?>
 
-        <form method="POST">
+        <form action="api.php" method="POST">
             
             <input type="text" name="id_post" hidden value="<?php echo $view['id_post'];?>">
 
