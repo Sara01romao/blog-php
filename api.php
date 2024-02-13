@@ -42,14 +42,26 @@ if(isset($_REQUEST["id"])) {
 }
 
 
-if(isset($_POST["editar_post"])) {
+if(isset($_REQUEST["editar_post"])) {
 
     $id_post=$_POST["id_post"];
     $titulo_post = $_POST['titulo_post'];
     $texto_post = $_POST['texto_post'];
 
-    $sql_editar="UPDATE `post` SET `titulo_post`= '$titulo_post', `texto_post` = '$texto_post', `data_post`= NOW() WHERE `id_post` = $id ";
-     $result_editar = mysqli_query($con, $sql_editar );
+
+    $sqlEdit = "UPDATE `post` SET `titulo_post`= '$titulo_post', `texto_post`= '$texto_post', `data_post`= NOW() WHERE `id_post` = $id_post";
+
+    $result_editar = mysqli_query($con, $sqlEdit);
+
+    if($result_editar) {
+       
+
+        header("Location: index.php?info=editok");
+
+        exit();
+    } else {
+        echo "Error: " . mysqli_error($con);
+    }
 
     
 }
