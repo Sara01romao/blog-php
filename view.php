@@ -28,7 +28,15 @@ include("api.php");
             <?php foreach($result_view  as $view) { ?>
                     <div class=" d-flex justify-content-center align-items-center">
 
-                    <a href="editar.php?id=<?php echo $view['id_post'];?>">Editar</a>
+                    <a  class="btn btn-success" href="editar.php?id=<?php echo $view['id_post'];?>">Editar</a>
+                    
+                    <form  action="api.php" method="POST">
+                        <input type="text" hidden name="id" value="<?php echo $view['id_post']; ?>">
+
+                        <button type="submit" class="btn btn-danger ml-5" name="deletar">Remover</button >
+                    </form>
+                    
+
 
                        <div>
                         <h1><?php echo $view['titulo_post'];?></h1>

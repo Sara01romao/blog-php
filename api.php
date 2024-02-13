@@ -58,12 +58,30 @@ if(isset($_REQUEST["editar_post"])) {
 
         header("Location: index.php?info=editok");
 
-        exit();
+        
     } else {
         echo "Error: " . mysqli_error($con);
     }
 
     
+}
+
+
+if(isset($_REQUEST["deletar"])){
+
+    $id=$_REQUEST["id"];
+
+    $sql_delete= "DELETE FROM `post` WHERE  `id_post` = $id ";
+    $result_delete = mysqli_query($con, $sql_delete);
+
+    if($result_delete) {
+       
+
+        header("Location: index.php?info=delete");
+
+        exit();
+    } 
+
 }
 
 ?>

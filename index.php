@@ -35,6 +35,11 @@ include("api.php");
 
                 </div>
                       
+            <?php } if($_REQUEST['info'] == "delete") { ?>
+                <div class="alert alert-success" role="alert">
+                    Post deletado com sucesso
+
+                </div>
             <?php } ?>
  
        <?php } ?>
