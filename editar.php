@@ -19,13 +19,13 @@ include("api.php");
        
         <?php foreach($result_view  as $view) { ?>
 
-        <form action="api.php" method="POST">
+        <form method="POST">
             
             <input type="text" name="id_post" hidden value="<?php echo $view['id_post'];?>">
 
             <input type="text" name="titulo_post" value="<?php echo $view['titulo_post'];?>" placeholder="Títudo do Blog" class="form-control bg-dark textwhite my-3">
 
-            <textarea  name="texto_post" value="<?php echo $view['texto_post'];?>" class="form-control bg-dark text-white my-3" id="" cols="30" rows="10"></textarea>
+            <textarea  name="texto_post"  class="form-control bg-dark text-white my-3"  cols="30" rows="10"><?php echo $view['texto_post'];?></textarea>
 
             <button name="editar_post" class="btn btn-dark">Editar Post</button>
 
